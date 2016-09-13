@@ -1,0 +1,21 @@
+<% capname =@user.name.capitalize %>
+
+<h1>This is <%= capname%>'s info:</h1>
+
+<p>Name: <%= capname %> <br>
+Email: <%= @user.email %> <br>
+Hometown: <%= @user.hometown %>
+	<% if !@user.hometown %>
+		Left blank. So, <%=capname%>, You weren't born anywhere?
+	<% elsif @user.hometown ="Providence" %>.
+		Nice place <%=@capname%>. Too bad <%=@user.hometown %> has so many gangsters!
+	<% elsif @user.hometown ="Manila" %>.  
+		<%=@user.hometown%> is a great city <%=@user.name %>!!
+	<% elsif @user.hometown ="Seattle" %>.  
+		Ah, <%=@user.hometown%>. Truly the best city in the world. You are lucky, <%=@user.name %>, few are lucky enough to come from the Emerald City!!
+
+	<% end %>
+
+
+</p> <br>
+<%= link_to "Edit", edit_user_path(@user) %> | <%= link_to "Delete My Account", user_path(@user), :method => 'delete',  :data => {:confirm => 'Are you sure? This will destroy your account and immediately log you out'} %>

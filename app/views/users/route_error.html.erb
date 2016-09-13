@@ -1,0 +1,8 @@
+
+<%= image_tag("confused.jpeg", size: 300) %> <br>
+<% if @route_err %>
+	<h1><%=link_to @route_err, '/index' %></h1>
+<% else %>
+	The @route_err is not being set in users#route_error
+<% end %>
+

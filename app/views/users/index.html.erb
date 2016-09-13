@@ -1,0 +1,30 @@
+<h1>This is for the index of users</h1>
+
+
+<% @users.each do |u| %>
+	<% if u.hometown != nil%>
+	 	<% capname= u.hometown.capitalize%> 
+	<% else %>
+		<% capname = "NO CITY GIVEN" %>
+
+	<% end %>
+<p>
+	Name: <%= u.name %> <br>
+	Email: <%= u.email %> <br>
+	Hometown: <%= capname%> <br>
+	<% if !u.hometown %>
+		Left blank. So, <%=u.name ||= "NO NAME!!!" %>, You weren't born anywhere? You formed straight from the ether?!
+	<% elsif capname =="Providence" %>
+		Nice place <%=u.name%>. Too bad <%=capname %>has so many gangsters!
+	<% elsif capname =="Manila" %>  
+		<%=capname%> is a great city <%=u.name%>!!
+	<% elsif capname =="New york" %>  
+		<%=capname%> is a great city, but I have complicated feelings about it,  <%=u.name%>!!
+	<% elsif capname =="Seattle" %>
+		Ah, <%=capname%>. Truly the best city in the world. You are lucky, <%=u.name %>, few are lucky enough to come from the Emerald City!!
+
+	<% end %> <br>
+	<%= link_to "Edit user", edit_user_path(u) %>
+	<%= link_to "delete", u, method: :delete, data:{confirm: 'Are you sure? This user will be permanently deleted.'}%>
+</p>-------<br>
+<% end %>
