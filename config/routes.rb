@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
   get '/error' => 'users#error'
+  get '/new' => 'users#logged_in_and_new'
 
 
   get '*path' => 'users#route_error'

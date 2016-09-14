@@ -1,0 +1,12 @@
+<h1>Need an account? Signup Here!</h1>
+<%= form_for :user, url: '/users', :html => {:class => "test"} do |f| %>
+
+	Name: <%= f.text_field :name %>
+	Email: <%= f.text_field :email %>
+	Hometown: <%= f.text_field :hometown %>
+	Password: <%= f.password_field :password %>
+	Confirm Password: <%= f.password_field :password_confirmation %> <br>
+
+	<!-- Picture: <%= f.file_field :picture %> -->
+	<%= f.submit "Submit" %>
+<% end %>

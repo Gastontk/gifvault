@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 before_filter :authorize, :except => [:new, :create]
+  def logged_in_and_new
+  	'/new'
+  end
+
 
   def new
   end
