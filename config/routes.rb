@@ -31,6 +31,8 @@ Rails.application.routes.draw do
   get '/sweet' => 'gif#sweet'
 
 # signup routes
+# new2 is part of later setup for allowing logged user to stay logged when making a new user.
+  # get '/new2' => 'users#logged_in_and_new'
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
   get '/error' => 'users#error'

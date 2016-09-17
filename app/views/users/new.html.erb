@@ -1,4 +1,16 @@
 <h1>Login!</h1>
+
+
+
+<% if @currently_logged_in %>
+	The id of the @currently_logged_in is <%= @currently_logged_in %>
+	The id of current_user is <%= current_user.id %>
+<% else %>
+	<h1>@currently_logged_user</h1>
+<%end%>
+
+
+
 <%= form_tag '/login', :class => 'test' do %>
 	Email: <%= text_field_tag :email %>
 	Password: <%= password_field_tag :password %>

@@ -1,8 +1,13 @@
 class UsersController < ApplicationController
 before_filter :authorize, :except => [:new, :create]
-  def logged_in_and_new
-  	'/new'
-  end
+
+# Created this as first step to allowing logged user to create new user without logging out.
+  # def logged_in_and_new
+  # 	@currently_logged_in = session[:user_id]
+  # 	@user = User.new
+  # 	render 'new'
+
+  # end
 
 
   def new
